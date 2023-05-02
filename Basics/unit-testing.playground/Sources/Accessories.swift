@@ -35,6 +35,10 @@ public class ShoppingCart {
     public func add(_ product: Product) {
         products.append(product)
     }
+    
+    public func removeAll() {
+        products.removeAll()
+        }
 }
 
 public extension ShoppingCart {
