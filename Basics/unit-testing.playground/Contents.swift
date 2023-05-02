@@ -54,6 +54,18 @@ class ShoppingCartTests: XCTestCase {
         // Then
         XCTAssertEqual(shoppingCart.totalPrice, 35)
     }
+    func testRemovingAllProductsFromShoppingCart() {
+        // Given: Here we assert that our initial state is correct
+        XCTAssertEqual(shoppingCart.totalPrice, 0)
+
+        // When
+        shoppingCart.add(Product(name: "Book", price: 20))
+        shoppingCart.add(Product(name: "Movie", price: 15))
+        
+        shoppingCart.removeAll()
+        // Then
+        XCTAssertEqual(shoppingCart.totalPrice, 0)
+    }
 }
 
 // --- Running all of our unit tests within the playground ---
